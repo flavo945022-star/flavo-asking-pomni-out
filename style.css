@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* A cozy, warm pinkish-beige background */
+    background: #ffe6e6; 
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Stops the screen from scrolling when the button runs away */
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(255, 105, 135, 0.2); /* Soft pink shadow */
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+    z-index: 10;
+}
+
+.emoji-art {
+    font-size: 45px;
+    margin-bottom: 15px;
+    display: block;
+    /* Adds a playful little bounce to the emojis */
+    animation: bounce 2s infinite ease-in-out; 
+}
+
+h1 {
+    color: #ff4757; /* A cute, vibrant red/pink */
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #6c5b7b; /* Soft dark purple for readability */
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    padding: 12px 35px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+}
+
+#yes-btn {
+    background-color: #ff6b81;
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 107, 129, 0.4);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+#yes-btn:hover {
+    transform: scale(1.1);
+    background-color: #ff4757;
+}
+
+#no-btn {
+    background-color: #f1f2f6;
+    color: #a4b0be;
+    /* The transition makes the button smoothly glide away instead of teleporting instantly */
+    transition: left 0.2s ease, top 0.2s ease; 
+}
+
+/* Playful bounce animation keyframes */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}

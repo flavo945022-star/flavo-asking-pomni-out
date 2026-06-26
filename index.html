@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Question for Maram 🕷️🍿</title>
+    <!-- Links to the separate CSS file and a cute font -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- The Question Box -->
+    <div class="container" id="main-container">
+        <span class="emoji-art">🍿🕷️❤️</span>
+        <h1>Hey Maram! ✨</h1>
+        <p>Would you like to go to the cinema with me to watch Spider-Man as a date?</p>
+        
+        <div class="button-group">
+            <button id="yes-btn">Yes!</button>
+            <button id="no-btn">No</button>
+        </div>
+    </div>
+
+    <!-- The Success Box (Hidden until she clicks Yes) -->
+    <div class="container" id="success-container" style="display: none;">
+        <span class="emoji-art">🎪🎉🥰</span>
+        <h1>flavo is happpy pomni has approved</h1>
+    </div>
+
+    <!-- The script that makes the No button run away -->
+    <script>
+        const noBtn = document.getElementById('no-btn');
+        const yesBtn = document.getElementById('yes-btn');
+        const mainContainer = document.getElementById('main-container');
+        const successContainer = document.getElementById('success-container');
+
+        // Function to move the 'No' button
+        function moveButton() {
+            // Calculate a random spot on the screen
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 20);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 20);
+            
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = `${x}px`;
+            noBtn.style.top = `${y}px`;
+        }
+
+        // Move it when she hovers (for PC) or taps (for mobile)
+        noBtn.addEventListener('mouseover', moveButton);
+        noBtn.addEventListener('touchstart', moveButton);
+
+        // Show your custom message when she clicks 'Yes'
+        yesBtn.addEventListener('click', () => {
+            mainContainer.style.display = 'none';
+            successContainer.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
